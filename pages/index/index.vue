@@ -1,82 +1,80 @@
 <template>
-	<view class="content bg-secondary ">
-		<view class="uni-padding-wrap uni-common-mt">
-			<view class="uni-title uni-common-mt">
-				Vertical Scroll
-				<text>\n纵向滚动</text>
+	<view>
+		<view class="bg-image">
+			<view class="bg__rule position-absolute right-0" style="top: 629rpx;">
+				<image style="width: 175rpx;height: 70rpx;" src="../../static/集钻H5_slices/活动规则@2x.png" mode="widthFix"></image>
 			</view>
-			<view>
-				<scroll-view :scroll-top="scrollTop" scroll-y="true" class="scroll-Y" @scrolltoupper="upper" @scrolltolower="lower"
-				 @scroll="scroll">
-					<view id="demo1" class="scroll-view-item uni-bg-red">A</view>
-					<view id="demo2" class="scroll-view-item uni-bg-green">B</view>
-					<view id="demo3" class="scroll-view-item uni-bg-blue">C</view>
-				</scroll-view>
-			</view>
-			<view @tap="goTop" class="uni-link uni-center uni-common-mt">
-				点击这里返回顶部
-			</view>
-			<view class="uni-title uni-common-mt">
-				Horizontal Scroll
-				<text>\n横向滚动</text>
-			</view>
-			<view>
-				<scroll-view class="scroll-view_H" scroll-x="true" @scroll="scroll" scroll-left="120">
-					<view id="demo1" class="scroll-view-item_H uni-bg-red">A</view>
-					<view id="demo2" class="scroll-view-item_H uni-bg-green">B</view>
-					<view id="demo3" class="scroll-view-item_H uni-bg-blue">C</view>
-				</scroll-view>
-			</view>
+
+
 		</view>
-		<view class="px-2 flex-1">
 
-			<!-- 中间图片部分 -->
-			<view class="px-2 mb-4">
+		<view class="main position-relative" style="margin-top: -364rpx;">
+			<view class="bg-zuanshi d-flex  flex-column a-center">
+				<view style="width: 700rpx;" class=" d-flex  flex-column a-center position-relative">
+					<image style="width: 700rpx;height: 240rpx;" src="../../static/集钻H5_slices/我的钻石底部卡片（合并）@2x.png" mode=""></image>
+					<image style="width: 680rpx;height: 140rpx;margin-top: -166rpx;" class="position-relative" src="../../static/集钻H5_slices/我的钻石外层部卡片（合并）@2x.png"
+					 mode=""></image>
 
-				<view class="bg-danger" style="width: 660upx;height: 510upx;"></view>
+
+					<image class="guandao-first-image" style="height: 100rpx;width: 6rpx;  " src="../../static/集钻H5_slices/衔接管@2x.png"
+					 mode="widthFix"></image>
+					<image class="guandao-first-image_1" style="height: 100rpx;width: 6rpx;  " src="../../static/集钻H5_slices/衔接管@2x.png"
+					 mode="widthFix"></image>
+				</view>
 			</view>
 
-			<!-- 我的钻石 -->
-			<view class="w-100 d-flex flex-column a-center j-center rounded-tr" style="height: 180rpx;background-color: #F2F2F2;">
-				<text class="font-md">我的钻石</text>
-				<text class="font-lg text-primary">88</text>
-			</view>
-			<!-- tabbar 页面 -->
-			<!-- 横向滚动导航 -->
-			<view>
-				<!-- 			<scroll-view
-				 id="tab-bar"
-				 class="uni-swiper-tab"
-				 scroll-x
-				 :scroll-left="scrollLeft">
-					<view
-					 v-for="(tab, index) in tabBars"
-					 :key="tab.id"
-					 class="swiper-tab-list"
-					 :class="tabIndex == index ? 'active' : ''"
-					 :id="tab.id"
-					 :data-current="index"
-					 @click="tapTab(index)">
-						<view class="tabitems"> {{ tab.name }} </view>
+			<!-- g管道 -->
+			<!-- 		<view class="position-absolute">
+				<image class="guandao-first-image" style="height: 100rpx;width: 6rpx;  margin-left: 137rpx;  margin-top: -14rpx;"
+				 src="../../static/集钻H5_slices/衔接管@2x.png" mode="widthFix"></image>
+
+				<image class="guandao-first-image" style="height: 100rpx;width: 6rpx;  margin-left:468rpx;  margin-top: -14rpx;"
+				 src="../../static/集钻H5_slices/衔接管@2x.png" mode="widthFix"></image>
+
+			</view> -->
+
+
+
+			<view class="bg-riqi d-flex  flex-column a-center" style="margin-top: 40rpx;background-color: rgb(254,219,193);">
+
+				<view class="date d-flex a-center j-center position-relative">
+					<view class="d-flex a-center j-center" style="width: 100%;">
+						<text @click="hande" class="span-1 text-center"> 1</text>
+						<view class="span-16" style="overflow: hidden;">
+							<scroll-view class="scroll-view_H" scroll-x="true" @scroll="scroll">
+									<view class="scroll-view-item_H ">10月1日</view>
+					<view class="scroll-view-item_H ">10月1日</view>
+					<view class="scroll-view-item_H ">10月2日</view>
+					<view class="scroll-view-item_H ">10月3日</view>
+					<view class="scroll-view-item_H ">10月4日</view>
+					<view class="scroll-view-item_H ">10月5日</view>
+					<view class="scroll-view-item_H ">10月7日</view>
+							</scroll-view>
+						</view>
+
+						<text class="span-1 te">1 </text>
 					</view>
-				</scroll-view> -->
-				<scroll-view scroll-x="true">
-					<view
-					 v-for="(tab, index) in tabBars"
-					 :key="tab.id"
-					 class="swiper-tab-list"
-					 :class="tabIndex == index ? 'active' : ''"
-					 :id="tab.id"
-					 :data-current="index"
-					 @click="tapTab(index)">
-						<view class="tabitems"> {{ tab.name }} </view>
-					</view>
-				</scroll-view>
 
-
+					<image class="guandao-first-image" style="height: 100rpx;width: 6rpx;  " src="../../static/集钻H5_slices/衔接管@2x.png"
+					 mode="widthFix"></image>
+					<image class="guandao-first-image_1" style="height: 100rpx;width: 6rpx;  " src="../../static/集钻H5_slices/衔接管@2x.png"
+					 mode="widthFix"></image>
+				</view>
 			</view>
-			<!-- 签到页面 -->
+
+			<!-- 列表 -->
+			<view class="bg-list d-flex j-center" style="padding-top: 32rpx;background-color: rgb(254,219,193);">
+
+				<view class="bg-image-list"></view>
+			</view>
+
 		</view>
+
+      <scroll-view class="scroll-view_H" scroll-x="true" @scroll="scroll" scroll-left="120">
+          <view id="demo1" class="scroll-view-item_H uni-bg-red">A</view>
+          <view id="demo2" class="scroll-view-item_H uni-bg-green">B</view>
+          <view id="demo3" class="scroll-view-item_H uni-bg-blue">C</view>
+        </scroll-view>
 	</view>
 </template>
 
@@ -87,64 +85,14 @@
 				scrollTop: 0,
 				old: {
 					scrollTop: 0
-				},
-				scrollLeft: 0,
-				title: 'Hello',
-				tabIndex: 0,
-				tabBars: [{
-					name: '关注',
-					id: 'guanzhu',
-					template: "index"
-				}, {
-					name: '推荐',
-					id: 'tuijian',
-					template: "special"
-				}, {
-					name: '体育',
-					id: 'tiyu',
-					template: "special"
-				}, {
-					name: '热点',
-					id: 'redian',
-					template: "special"
-				}, {
-					name: '财经',
-					id: 'caijing',
-					template: "special"
-				}, {
-					name: '娱乐',
-					id: 'yule',
-					template: "special"
-				}, {
-					name: '军事',
-					id: 'junshi',
-					template: "special"
-				}, {
-					name: '历史',
-					id: 'lishi',
-					template: "special"
-				}, {
-					name: '本地',
-					id: 'bendi',
-					template: "special"
-				}]
+				}
 			}
 		},
-		onLoad() {
-
-		},
-		onReady() {
-			// plus.navigator.setStatusBarBackground("#FF6666");
-
-		},
 		methods: {
-			handle() {
+			hande() {
 				uni.navigateTo({
-					url: "../cashGift/cashGift"
+					url: '../ceshi/ceshi'
 				})
-			},
-			tapTab(e) {
-				console.log(e);
 			},
 			upper: function(e) {
 				console.log(e)
@@ -157,6 +105,7 @@
 				this.old.scrollTop = e.detail.scrollTop
 			},
 			goTop: function(e) {
+				// 解决view层不同步的问题
 				this.scrollTop = this.old.scrollTop
 				this.$nextTick(function() {
 					this.scrollTop = 0
@@ -166,47 +115,87 @@
 					title: "纵向滚动 scrollTop 值已被修改为 0"
 				})
 			}
-		}
+		},
 	}
 </script>
 
-<style>
-	.status_bar {
-		height: var(--status-bar-height);
+<style lang="scss" scoped>
+	.bg-image {
+		background: url(../../static/集钻H5_slices/头部背景@2x.png);
+		background-size: cover;
 		width: 100%;
-		background: red;
+		height: 100%;
+		height: 1070rpx;
 	}
 
-	.content {
-		/* margin-top: 1210px; */
-		/* height: 100%; */
-		/* 	display: flex;
-		flex-direction: column;
-		align-items: center;
-		justify-content: center; */
+	.guandao-first-image {
+		height: 80rpx !important;
+		position: absolute;
+		left: 110rpx;
+		bottom: -66rpx;
+		z-index: 200;
+
 
 	}
 
-	.logo {
-		height: 200upx;
-		width: 200upx;
-		margin-top: 200upx;
-		margin-left: auto;
-		margin-right: auto;
-		margin-bottom: 50upx;
+	.guandao-first-image_1 {
+		height: 80rpx !important;
+		position: absolute;
+		right: 110rpx;
+		bottom: -66rpx;
+		z-index: 200;
+
+
 	}
 
-	.text-area {
-		display: flex;
-		justify-content: center;
+	.bg-riqi {
+		.date {
+			background: url(../../static/集钻H5_slices/日期卡片（合并）@2x.png);
+			background-size: cover;
+			width: 700rpx;
+			height: 120rpx;
+
+		}
+
 	}
 
-	.title {
+	.bg-image-list {
+
+		background: url(../../static/集钻H5_slices/列表卡片（合并）@2x.png);
+		background-repeat: no-repeat;
+		background-size: contain;
+		width: 700rpx;
+		height: 1842rpx;
+	}
+	
+	// .scroll-Y {
+	// 	height: 300upx;
+	// }
+	// 
+	.scroll-view_H {
+		white-space: nowrap;
+		width: 100%;
+	}
+	// 
+	.scroll-view-item {
+		height: 300upx;
+		line-height: 300upx;
+		text-align: center;
 		font-size: 36upx;
-		color: #8f8f94;
 	}
-
-	.active .tabitems {
-		border-bottom-color: #fd6801;
+	// 
+	.scroll-view-item_H {
+		display: inline-block;
+		width: 25%;
+		// height: 300upx;
+		// line-height: 300upx;
+		text-align: center;
+		font-size: 36upx;
+		// height:25px;
+font-size:28rpx;
+font-family:PingFang SC;
+font-weight:400;
+color:rgba(130,58,22,1);
+line-height:54rpx;
 	}
 </style>
