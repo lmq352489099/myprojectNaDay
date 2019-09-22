@@ -192,10 +192,10 @@
 		text-align: center;
 		font-size: 36upx;
 		// height:25px;
-font-size:28rpx;
-font-family:PingFang SC;
-font-weight:400;
-color:rgba(130,58,22,1);
-line-height:54rpx;
+	font-size:28rpx;
+	font-family:PingFang SC;
+	font-weight:400;
+	color:rgba(130,58,22,1);
+	line-height:54rpx;
 	}
 </style>
